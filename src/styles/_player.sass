@@ -1,0 +1,34 @@
+.player
+    min-height: 20vh
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: space-between
+
+    .time-control
+        display: flex
+        // background-color: coral
+        padding: 1rem 2rem
+        width: 80%
+        
+        input
+            width: 100%
+            margin-inline: 0.5rem
+            padding: 0
+        p
+            padding: 0.5rem
+        
+    .play-control
+        display: flex
+        justify-content: space-between
+        align-items: center
+        padding: 1rem
+        
+        width: 50%
+        svg
+            cursor: pointer
+            transition: 0.3s ease-in-out
+
+            &:hover
+                transform: scale(1.2)
+
