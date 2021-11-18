@@ -1,0 +1,53 @@
+.library
+    // display: none
+    transform: translateX(-100%)
+    background-color: white
+    box-shadow: 0 0 20px 5px grey
+    position: fixed
+    top: 0
+    left: 0
+    width: 250px
+    height: 100%
+    padding: 0.5rem
+    transition: 500ms ease-in-out
+
+    .library-songs
+        // background-color: white
+        
+        display: flex
+        flex-direction: column
+        margin-top: 2rem
+
+
+        .library-song
+            width: 100%
+            height: 60px
+            
+            display: flex
+            margin: 0.25rem 0
+            cursor: pointer
+            transition: 500ms ease-in-out
+
+            &:hover
+                background-color: #8282ff69
+
+
+            img
+                height: 100%
+                width: auto
+
+            .song-description
+                margin-left: 0.5rem
+                display: flex
+                flex-direction: column
+                justify-content: center
+
+                h3
+                    font-size: 1rem
+                p
+                    font-size: 0.9rem
+.selected
+    background-color: #6161ca8a
+
+.open
+    transform: translateX(0%)
