@@ -1,12 +1,11 @@
 import React from "react";
+// import { playAudio } from "../playSong";
 
-const LibrarySong = ({key, song, songs, setCurrentSong, audioRef, isPlaying, setSongs}) => {
+const LibrarySong = ({songInfo, song, songs, setCurrentSong, audioRef, isPlaying, setSongs}) => {
 
-    const songSelectHandler = (event) => {
+    const songSelectHandler = async (event) => {
         const selectedSong = songs.filter((state) => state.id === song.id)
-        // console.log(id);
-        // console.log(selectedSong);
-        setCurrentSong(selectedSong[0]);
+        await setCurrentSong(selectedSong[0]);
         
         // change state active of songs when one is selected
         const newSongs = songs.map((newSong) => {
@@ -22,19 +21,12 @@ const LibrarySong = ({key, song, songs, setCurrentSong, audioRef, isPlaying, set
                 }
             }
         })
-        setSongs(newSongs);
+        await setSongs(newSongs);
         
         
-        // chech if song is playing if yes, wait until new song is loaded and play it.
-        if(isPlaying){
-            const playPromise = audioRef.current.play();
-            if(playPromise !== undefined){
-                playPromise.then((audio) => {
-                    audioRef.current.play();
-                })
-            }
+    //    playAudio(isPlaying,audioRef);
+    if(isPlaying) audioRef.current.play();
 
-        }
     }
 
 
@@ -44,6 +36,7 @@ const LibrarySong = ({key, song, songs, setCurrentSong, audioRef, isPlaying, set
             <div className="song-description">
                 <h3>{song.name}</h3>
                 <p>{song.artist}</p>
+                
             </div>
         </div>
     )
