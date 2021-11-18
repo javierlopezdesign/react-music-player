@@ -34,29 +34,7 @@ const Player = ( { key, setSongs, setCurrentSong, songs, setSongInfo, playSongHa
     }
 
 
-
-    // useEffect(() => {
-    //     const newSongs = songs.map((newSong) => {
-    //         if(newSong.id === currentSong.id){
-    //             return{
-    //                 ...newSong,
-    //                 active: true
-    //             };
-    //         }else{
-    //             return{
-    //                 ...newSong,
-    //                 active: false
-    //             }
-    //         }
-    //     })
-    //     setSongs(newSongs);
-    //     // playAudio(isPlaying,audioRef);
-    // },[currentSong])
-    
-
-
     // added async to wait until song is loaded so no need to call another function.
-
     const skipTrackHandler = async (direction) => {
         let currentIndex = songs.findIndex((song) => song.id === currentSong.id)
         if(direction==='skip-forward'){
@@ -77,17 +55,27 @@ const Player = ( { key, setSongs, setCurrentSong, songs, setSongInfo, playSongHa
         if(isPlaying) audioRef.current.play();
     }
 
+
+    // Add styles
+    const trackAnim = {
+        width: `${songInfo.animationPercentage}%`
+    }
+
     return (
         <div className="player">
             <div className="time-control">
                 <p>{getTime(songInfo.currentTime)}</p>
-                <input 
-                    min={0} 
-                    max={songInfo.duration || 0}
-                    value={songInfo.currentTime}
-                    onChange={dragHandler}
-                    type="range" 
-                />
+                <div className="track">
+                    <input 
+                        min={0} 
+                        max={songInfo.duration || 0}
+                        value={songInfo.currentTime}
+                        onChange={dragHandler}
+                        type="range"
+                    />
+                    <div className="animate-track" style={trackAnim}></div>
+                </div>
+
                 <p>{songInfo.duration ? getTime(songInfo.duration) : '0:00' }</p>
             </div>
             <div className="play-control">

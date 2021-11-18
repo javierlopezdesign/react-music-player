@@ -26,7 +26,8 @@ function App() {
   // From player.js
   const [songInfo, setSongInfo] = useState({
     currentTime: 0,
-    duration: null
+    duration: null,
+    animationPercentage: 0
   })
 
   // dragn drop slider to get song position
@@ -39,8 +40,11 @@ function App() {
   const timeUpdateHandler = (event)=>{
       const duration = event.target.duration;
       const current = event.target.currentTime;
+
+      // calculate percentage
+      const roundedCurrent = Math.round((current/duration)*100)
       // set songInfo state > ... leave whatever the state had before!!
-      setSongInfo({...songInfo, currentTime: current, duration: duration})
+      setSongInfo({...songInfo, currentTime: current, duration: duration, animationPercentage:roundedCurrent})
   }
   // event handlers
   const playSongHandler = () => {
