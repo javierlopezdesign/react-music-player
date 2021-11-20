@@ -82,6 +82,42 @@ function chillHop() {
         color: ["#BA4A46","#FDF0DD"],
         id: uuidv4(),
         active: false
+    },
+    {       
+      name: "Blue",
+      cover: "https://chillhop.com/wp-content/uploads/2020/07/f9ad13db0a7c6e6a086a3a17a15ff92cd69b2d7e-1024x1024.jpg",
+      artist: "Philantrope, DRWN",
+      audio: "https://mp3.chillhop.com/serve.php/?mp3=8112",
+      color: ["#BA4A46","#FDF0DD"],
+      id: uuidv4(),
+      active: false
+    },
+    {       
+      name: "Fike",
+      cover: "https://chillhop.com/wp-content/uploads/2020/07/f9ad13db0a7c6e6a086a3a17a15ff92cd69b2d7e-1024x1024.jpg",
+      artist: "Philantrope",
+      audio: "https://mp3.chillhop.com/serve.php/?mp3=8780",
+      color: ["#BA4A46","#FDF0DD"],
+      id: uuidv4(),
+      active: false
+    },
+    {       
+      name: "Frameworks, Pt.1",
+      cover: "https://chillhop.com/wp-content/uploads/2020/07/f9ad13db0a7c6e6a086a3a17a15ff92cd69b2d7e-1024x1024.jpg",
+      artist: "Philantrope",
+      audio: "https://mp3.chillhop.com/serve.php/?mp3=9136",
+      color: ["#BA4A46","#FDF0DD"],
+      id: uuidv4(),
+      active: false
+    },
+    {
+      name: "Leafy",
+      cover: "https://chillhop.com/wp-content/uploads/2020/06/49f6e32ca521fbad46a1b281e3893cf6254bf11d-1024x1024.jpg",
+      artist: "Illiterate, Josh Wells",
+      audio: "https://mp3.chillhop.com/serve.php/?mp3=15131",
+      color: ["#BA4A46","#FDF0DD"],
+      id: uuidv4(),
+      active: false
     }    
   ];
 }
